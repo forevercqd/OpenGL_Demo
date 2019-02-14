@@ -50,8 +50,10 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
     vertexData.put(tableVertices);
   }
 
-  @Override public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
+  @Override
+  public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
     GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);//清屏
+
     String vertexShaderSource =
         TextResourceReader.readTextFileFromResource(context, R.raw.simple_vertex_shader);//读取顶点着色器
     String fragmentShaderSource =
@@ -86,11 +88,13 @@ public class AirHockeyRenderer implements GLSurfaceView.Renderer {
         aPostionLocation);// Enable or disable a generic vertex attribute array
   }
 
-  @Override public void onSurfaceChanged(GL10 gl10, int i, int i1) {
+  @Override
+  public void onSurfaceChanged(GL10 gl10, int i, int i1) {
     GLES20.glViewport(0, 0, i, i1);//创建窗口，第一二个参数为窗口坐标，三四参数宽高
   }
 
-  @Override public void onDrawFrame(GL10 gl10) {
+  @Override
+  public void onDrawFrame(GL10 gl10) {
     /*
 函数原型:
       void glClear(GLbitfield mask);

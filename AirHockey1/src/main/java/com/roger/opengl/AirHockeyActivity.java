@@ -13,7 +13,8 @@ public class AirHockeyActivity extends AppCompatActivity {
   private GLSurfaceView glSurfaceView;
   private boolean rendererSet = false;
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     glSurfaceView = new GLSurfaceView(this);
     final ActivityManager activityManager =
@@ -32,14 +33,16 @@ public class AirHockeyActivity extends AppCompatActivity {
     setContentView(glSurfaceView);
   }
 
-  @Override protected void onResume() {
+  @Override
+  protected void onResume() {
     super.onResume();
     if (rendererSet) {
       glSurfaceView.onResume();
     }
   }
 
-  @Override protected void onPause() {
+  @Override
+  protected void onPause() {
     super.onPause();
     if (rendererSet) {
       glSurfaceView.onPause();
